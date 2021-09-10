@@ -5,12 +5,16 @@ import random
 #                 [[ 5,5,4,6,6 ],[ 5,6,5,5,4]],
 #                 [[ 9,10,11,10,9 ],[ 10,11,9,12,12]]]
 
-def CreaArregloClases( numeroClases, numeroRepClase ):
+def CreaArregloClases( numeroClases, numeroRepClase, dimension ):
     arregloClases = []
     for i in range( 0, numeroClases ):
-        centroide = int(input( 'Dame el centroide de la clase ' + str( i + 1 ) + ' : ' ))
-        dispersion = int(input( 'Ingrese la dispersion de la clase' + str( i + 1 ) + ' : ' ))
-        arregloClases.append( np.random.normal( centroide , dispersion , (2, numeroRepClase)) )
+        centroide = input( 'Dame el centroide de la clase ' + str( i + 1 ) + ' : ' )
+        dispersion = int( input( 'Ingrese la dispersion de la clase' + str( i + 1 ) + ' : ' ) )
+        aux = centroide.split(",")
+        coords_centroide = []
+        for i in aux:
+            coords_centroide.append( [int( i )] )
+        arregloClases.append( np.random.normal( coords_centroide , dispersion , (dimension, numeroRepClase ) ) )
     return np.array(arregloClases)
 
 def ObtieneMenor( distDir ):

@@ -26,3 +26,19 @@ def CalculaVarianzas( arregloClases, arregloMedias ):
         arregloVarianzas.append( varianza )
     
     return np.array( arregloVarianzas )
+
+def CalculaVarianzas3D( arregloClases, arregloMedias ):
+    arregloVarianzas = []
+    for i in range( 0 , arregloClases.shape[0] ):
+        dato_x = arregloClases[i][0,:] - arregloMedias[i][0]
+        dato_y = arregloClases[i][1,:] - arregloMedias[i][1]
+        dato_z = arregloClases[i][2,:] - arregloMedias[i][2]
+
+        dato1 = np.array([ dato_x, dato_y, dato_z ])
+        dato2 = np.array( np.transpose( dato1 ) )
+
+        varianza = np.array( (1/4)*np.matmul( dato1 , dato2 ) )
+
+        arregloVarianzas.append( varianza )
+    
+    return np.array( arregloVarianzas )
