@@ -24,6 +24,6 @@ def nearestNeibors( vector, arregloClases ):
     
 
     # print("El vector pertenece a la clase " + clases_vecinos[0])
-    print(diccionario)
+    # print(diccionario)
     print("El vector pertenece a la clase " + mode(lista_vecinos))
     Grafica( vector, arregloClases )
