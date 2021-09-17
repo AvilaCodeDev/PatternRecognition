@@ -22,3 +22,9 @@ def ObtieneMenor( distDir ):
 
 def ObtieneMayor( arreglo ):
     return max( arreglo , key = arreglo.get )
+
+def Normalizar( vector ):
+    norm = np.linalg.norm( vector )
+    if norm == 0:
+        return vector
+    return vector / norm

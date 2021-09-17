@@ -14,6 +14,7 @@ def Mahalanobis( vector, arregloMedias, arregloVarianzas ):
         distDiccinario['Clase ' + str(i + 1)] = distancia
     
     valor = ObtieneMenor( distDiccinario )
+    print(distDiccinario)
 
     print( ' El vector desconocido ', vector, ' pertenece a la ', valor )
 
