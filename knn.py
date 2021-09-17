@@ -17,7 +17,6 @@ def nearestNeibors( vector, arregloClases ):
     k = int(input('Ingrese el valor de k: '))
     vecinos = lista[:k]
     for vecino in vecinos:
-        print(vecino)
         for k, v in diccionario.items():
             if vecino in v:
                 lista_vecinos.append(k)

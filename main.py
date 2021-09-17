@@ -28,12 +28,19 @@ while True:
 
             vector = np.array([ vx, vy ])
 
-            clasficador = int( input( '¿Con que clasificador lo quieres probar? 1=Distancia Minima | 2=Maxima Probabilidad | 3=KNN' ) )
+            clasficador = int( input( '¿Con que clasificador lo quieres probar? 1=Distancia Minima | 2=Maxima Probabilidad | 3=KNN | 4= All' ) )
             if( clasficador == 1 ):
                 DistanciaMinima( vector, arregloMedias, arregloClases )
             elif( clasficador == 2 ):
                 MaximaProbabilidad( vector, arregloMedias, arregloClases )
             elif( clasficador == 3 ):
+                nearestNeibors( vector, arregloClases )
+            elif( clasficador == 4 ):
+                print("Distancia Euclidiana: ")
+                DistanciaMinima( vector, arregloMedias, arregloClases )
+                print("Maxima Probabilidad: ")
+                MaximaProbabilidad( vector, arregloMedias, arregloClases )
+                print("KNN: ")
                 nearestNeibors( vector, arregloClases )
             
             volverIntentar = int( input( '¿Quieres probar otro vector? 0= No | 1= Si' ) )

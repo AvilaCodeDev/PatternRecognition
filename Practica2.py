@@ -17,8 +17,6 @@ def MaximaProbabilidad( vector, arregloMedias, arregloClases ):
         dato2 = math.exp(-0.5*np.matmul( h, np.matmul(inv_varianza, h1) ))
         prob = dato1 * dato2
         proDir['clase ' + str( i + 1 )] = prob * 100
-
-        print( prob )
     
     mayor_prob = ObtieneMayor( proDir )
     if( mayor_prob == 0.0 ):
