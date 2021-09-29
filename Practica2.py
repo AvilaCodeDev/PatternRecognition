@@ -7,6 +7,7 @@ from helpers.operaciones import CalculaVarianzas
 
 
 def MaximaProbabilidad( vector, arregloMedias, arregloClases ):
+    print(arregloClases)
     arregloVarianzas = CalculaVarianzas( arregloClases, arregloMedias )
     proDir = {}
     for i in range( 0, arregloClases.shape[0] ):
@@ -19,6 +20,9 @@ def MaximaProbabilidad( vector, arregloMedias, arregloClases ):
         proDir['clase ' + str( i + 1 )] = prob * 100
     
     mayor_prob = ObtieneMayor( proDir )
+    print(proDir)
+    print(arregloVarianzas)
+    print(inv_varianza)
     if( mayor_prob == 0.0 ):
         print( 'El vector ', vector, ' esta my alejado de las clases.' )
     else:

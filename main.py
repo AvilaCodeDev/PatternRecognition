@@ -12,15 +12,19 @@ from helpers.arreglos import CreaArregloClases
 while True:
 
     dimension = int( input( '¿En que dimension deseas trabajar? 0 = 2D | 1 = 3D' ) )
-    cantClases = int(input('¿Cuantas clases quieres?'))
-    repClase = int(input('¿Cuantos representantes quieres por clase?'))
+    # cantClases = int(input('¿Cuantas clases quieres?'))
+    # repClase = int(input('¿Cuantos representantes quieres por clase?'))
     if( dimension == 0 ):    
-        arregloClases = CreaArregloClases( cantClases, repClase, 2 )
+        # arregloClases = CreaArregloClases( cantClases, repClase, 2 )
         # arregloClasesPrueba = [[[ 0 ,0 ,1 ,0 ,2],[0 ,1 ,1 ,1 ,1]],
         #                 [[ 5,5,4,6,6 ],[ 5,6,5,5,4]],
         #                 [[ 9,10,11,10,9 ],[ 10,11,9,12,12]]]
         # arregloClases = np.array( arregloClasesPrueba )
-        arregloMedias = ObtieneMedia( arregloClases )
+        arregloClasesExmaneProblema2 = np.array([[[0, 3, 2, 1, 5 ],[0, 8, 2, 1, 3]],
+                                        [[4, 6, 5, 6, 7 ],[8, 3, 4, 4, 5]]])
+
+        arregloMediasExamenProblema2 = ObtieneMedia( arregloClasesExmaneProblema2 )
+        # arregloMedias = ObtieneMedia( arregloClases )
 
         while True:
             vx = float( input( 'Ingresa la cordenada x del vector' ) )
@@ -32,7 +36,7 @@ while True:
             if( clasficador == 1 ):
                 DistanciaMinima( vector, arregloMedias, arregloClases )
             elif( clasficador == 2 ):
-                MaximaProbabilidad( vector, arregloMedias, arregloClases )
+                MaximaProbabilidad( vector, arregloMediasExamenProblema2, arregloClasesExmaneProblema2 )
             elif( clasficador == 3 ):
                 nearestNeibors( vector, arregloClases )
             elif( clasficador == 4 ):
